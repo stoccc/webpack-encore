@@ -34,7 +34,6 @@ describe('plugins/manifest', () => {
         expect(plugins.length).to.equal(1);
         expect(plugins[0].plugin).to.be.instanceof(ManifestPlugin);
         expect(plugins[0].plugin.opts.fileName).to.equal('manifest.json');
-        expect(plugins[0].plugin.opts.publicPath).to.equal('/foo/');
     });
 
     it('with options callback', () => {
@@ -51,8 +50,5 @@ describe('plugins/manifest', () => {
 
         // Allows to override default options
         expect(plugins[0].plugin.opts.fileName).to.equal('bar');
-
-        // Doesn't remove default options
-        expect(plugins[0].plugin.opts.publicPath).to.equal('/foo/');
     });
 });
